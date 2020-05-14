@@ -4,7 +4,7 @@ import "./DrawToggleButton.scss"
 const DrawToggleButton = ({ click }) => (
   <button className="toggle-button" onClick={click}>
     <svg
-      fill="#000000"
+      fill="#ffffff"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 26 26"
       width="26px"

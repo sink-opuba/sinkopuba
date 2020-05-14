@@ -4,8 +4,7 @@ import React, { useState } from "react"
 import DrawToggleButton from "../DrawToggleButton/DrawToggleButton"
 import SideBar from "../SideBar/SideBar.jsx"
 
-const Header = ({ siteTitle, path }) => {
-  const [sideBarOpen, setSideBarOpen] = useState(false)
+const Header = ({ siteTitle, sideBarOpen, setSideBarOpen }) => {
   const toggleSideBarClick = () => setSideBarOpen(!sideBarOpen)
   return (
     <>
@@ -13,7 +12,17 @@ const Header = ({ siteTitle, path }) => {
         <div className="header-logo">
           <Link to="/">Sink Opuba</Link>
         </div>
+        <div className="nav-link">
+          <ul>
+            <li>
+              <a href="/#blog">Blog</a>
+            </li>
 
+            <li>
+              <a href="/">About</a>
+            </li>
+          </ul>
+        </div>
         <div className="nav-toggle">
           <DrawToggleButton click={toggleSideBarClick} />
         </div>
@@ -25,6 +34,8 @@ const Header = ({ siteTitle, path }) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  sideBarOpen: PropTypes.bool,
+  setSideBarOpen: PropTypes.func,
 }
 
 Header.defaultProps = {
