@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -16,16 +16,16 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const [sideBarOpen, setSideBarOpen] = useState(false)
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 1200,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        sideBarOpen={sideBarOpen}
+        setSideBarOpen={setSideBarOpen}
+      />
+      <div onClick={() => setSideBarOpen(false)}>
         <main>{children}</main>
       </div>
     </>
