@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `sinkopuba`,
-    description: `Sharing thoughts on code, technology, engineering, and expriences.`,
+    description: `Sinkopere Opuba - Sharing thoughts on code, technology, engineering, and expriences.`,
     author: `@sinkopuba`,
     twitterUsername: `@sinkopuba`,
     siteUrl: "https://sinkopuba.com",
