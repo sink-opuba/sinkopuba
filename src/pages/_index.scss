@@ -1,11 +1,10 @@
 .index-container {
-  background-color: #e4e4e4d3;
-  height: 100vh;
+  background-color: $color-gray;
+  padding-bottom: 1rem;
 }
 
 .sink-section {
   background-color: $color-primary;
-  margin-top: 6rem;
   padding: 6rem;
   color: $color-white;
   display: flex;
@@ -67,5 +66,9 @@
       padding: 1rem;
       margin-bottom: 3rem;
     }
+  }
+
+  .blog-section {
+    padding: 1.8rem;
   }
 }

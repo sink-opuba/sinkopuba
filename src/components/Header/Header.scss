@@ -2,7 +2,6 @@
   width: 100%;
   top: 0;
   padding-bottom: 1.4rem;
-  position: fixed;
   display: flex;
   justify-content: space-between;
   background-color: $color-primary;
@@ -52,7 +51,8 @@
 @media only screen and (max-width: 768px) {
   .header {
     padding-top: 0.6rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    position: fixed;
   }
   .header-logo {
     padding-left: 1.6rem;

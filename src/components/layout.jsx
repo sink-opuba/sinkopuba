@@ -1,33 +1,20 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header/Header"
-// import "./styles/bootstrap/bootstrap.min.css"
 import "./styles/_main.scss"
+import Footer from "./Footer/Footer"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
   const [sideBarOpen, setSideBarOpen] = useState(false)
 
   return (
     <>
-      <Header
-        siteTitle={data.site.siteMetadata.title}
-        sideBarOpen={sideBarOpen}
-        setSideBarOpen={setSideBarOpen}
-      />
+      <Header sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} />
       <div onClick={() => setSideBarOpen(false)}>
         <main>{children}</main>
       </div>
+      <Footer />
     </>
   )
 }

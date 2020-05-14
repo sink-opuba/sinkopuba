@@ -1,10 +1,10 @@
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React from "react"
 import DrawToggleButton from "../DrawToggleButton/DrawToggleButton"
 import SideBar from "../SideBar/SideBar.jsx"
 
-const Header = ({ siteTitle, sideBarOpen, setSideBarOpen }) => {
+const Header = ({ sideBarOpen, setSideBarOpen }) => {
   const toggleSideBarClick = () => setSideBarOpen(!sideBarOpen)
   return (
     <>
