@@ -35,7 +35,7 @@ exports.createPages = async function ({ actions, graphql, reporter }) {
     const next = edge.next ? edge.next.frontmatter : null
     const prev = edge.previous ? edge.previous.frontmatter : null
     actions.createPage({
-      path: `/${path}`,
+      path: `/blog/${path}`,
       component: require.resolve(`./src/templates/blogTemplate.js`),
       context: {
         slug: path,
