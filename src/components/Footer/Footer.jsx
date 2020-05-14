@@ -1,5 +1,5 @@
 import React from "react"
-import { FaTwitter, FaLinkedinIn, FaRss } from "react-icons/fa"
+import { FaTwitter, FaGithub, FaLinkedinIn, FaRss } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
 
 const Footer = () => {
@@ -15,6 +15,15 @@ const Footer = () => {
               href="https://twitter.com/sinkopuba"
             >
               <FaTwitter />
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/sink-opuba"
+            >
+              <FaGithub />
             </a>
           </li>
           <li>
