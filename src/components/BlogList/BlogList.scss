@@ -31,7 +31,7 @@
   padding-top: 1.4rem;
   button {
     font-size: 1.2rem;
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1.2rem;
     border: 1px solid #1d014b;
     background-color: transparent;
     border-radius: 0.3rem;
@@ -41,6 +41,10 @@
     cursor: pointer;
     background-color: #1d014b;
     color: white;
+  }
+  button:active,
+  button:focus {
+    outline: none;
   }
 }
 

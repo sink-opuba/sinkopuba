@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import site from "../../gatsby-config"
 import Img from "gatsby-image"
-import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 
 import Layout from "../components/layout"
 import BlogStyle from "./postTemplate.module.scss"
@@ -14,11 +13,6 @@ const Blog = ({ data, pageContext, location }) => {
   const url = `${site.siteMetadata.siteUrl + location.pathname}`
   const post = data.markdownRemark
   const { next, prev } = pageContext
-  let disqusConfig = {
-    url,
-    identifier: post.id,
-    title: post.frontmatter.title,
-  }
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
@@ -28,10 +22,6 @@ const Blog = ({ data, pageContext, location }) => {
           <div>
             <h5>
               {post.frontmatter.date} . {post.timeToRead} min Read{" . "}{" "}
-              <CommentCount
-                config={disqusConfig}
-                placeholder="Join the discussion"
-              />
             </h5>
           </div>
         </div>
@@ -75,12 +65,9 @@ const Blog = ({ data, pageContext, location }) => {
         <div className={BlogStyle.blogPostBody}>
           <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
         </div>
-
+        
         <div className={BlogStyle.aboutAuthor}>
-          <Img
-            alt={post.frontmatter.imagedescription}
-            fixed={post.frontmatter.authorimage.childImageSharp.fixed}
-          />
+          
           <div className={BlogStyle.authorInfo}>
             <span>About the Author</span>
             <h3>{post.frontmatter.author}</h3>
@@ -90,8 +77,6 @@ const Blog = ({ data, pageContext, location }) => {
             </p>
           </div>
         </div>
-
-        <Disqus config={disqusConfig} />
       </div>
       <div className={BlogStyle.articleLinks}>
         {prev && (
@@ -127,15 +112,6 @@ export const query = graphql`
           }
         }
         imagedescription
-        author
-        authorrole
-        authorimage {
-          childImageSharp {
-            fixed(width: 60, height: 60) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
       }
       html
       timeToRead

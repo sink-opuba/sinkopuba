@@ -14,7 +14,7 @@ const IndexPage = () => (
         <div className="sink-section__heading">
           <h1>
             {" "}
-            Hi, I'm Sinkopere Opuba, a software Developer with a bias to
+            Hi, I'm Sinkopere Opuba, a software Developer with a bias toward
             JavaScript and its ecosystem. Thanks for stopping by👏
           </h1>
         </div>

@@ -8,23 +8,35 @@ const Footer = () => {
       <h3 id="contact">Stay in Touch!</h3>
       <div className="sink-details">
         <ul className="sink-details__list">
-          <li title="twitter">
-            <a href="https://twitter.com/sinkopuba">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/sinkopuba"
+            >
               <FaTwitter />
             </a>
           </li>
-          <li title="linkedin">
-            <a href="https://www.linkedin.com/in/sinkopere-opuba">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/sinkopere-opuba"
+            >
               <FaLinkedinIn />
             </a>
           </li>
-          <li title="RSS Feed">
-            <a href="/#RSS">
+          <li>
+            <a target="_blank" rel="noopener noreferrer" href="/#RSS">
               <FaRss />
             </a>
           </li>
-          <li title="Email">
-            <a href="mailto:osinkopere@yahoo.com">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="mailto:osinkopere@yahoo.com"
+            >
               <MdEmail />
             </a>
           </li>
