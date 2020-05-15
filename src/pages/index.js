@@ -17,7 +17,7 @@ const IndexPage = () => {
               date(formatString: "MMM Do, YYYY")
               path
             }
-            excerpt(pruneLength: 200)
+            excerpt(pruneLength: 160)
           }
         }
       }
@@ -41,7 +41,7 @@ const IndexPage = () => {
         </section>
         <section className="blog-section">
           <h3>Articles</h3>
-          <BlogList posts={data} />
+          <BlogList data={data} />
         </section>
       </div>
     </Layout>

@@ -1,67 +1,48 @@
-import React from "react"
+import React, { useState } from "react"
+import { chunkArray } from "../../helpers/chunkArray"
 import "./BlogList.scss"
+import BlogListItems from "./BlogListItems"
 
-const BlogList = () => {
+const BlogList = ({ data }) => {
+  const [state, setState] = useState({
+    page: 1,
+    chunksPerPage: 1,
+    allLoaded: false,
+  })
+
+  const edges = data.allMarkdownRemark.edges
+  const posts = [...edges]
+  const { allLoaded, page, chunksPerPage } = state
+
+  // Implements See more articles feature
+  const renderPosts = () => {
+    let { page, chunksPerPage } = state
+    let chunks = chunkArray(Array.from(posts), 2)
+    let paginated = Array.from(chunks).splice(0, page * chunksPerPage)
+    return paginated.map((group, index) => (
+      <BlogListItems posts={group} key={index} />
+    ))
+  }
+
+  const onLoad = () => {
+    let allLoaded = (page + 1) * chunksPerPage >= posts.length / 2
+    setState(prevState => ({
+      ...prevState,
+      page: prevState.page + 1,
+      allLoaded,
+    }))
+  }
+
   return (
     <section className="blog-list__container">
-      <article className="blog-list__article">
-        <h3>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit adin infn
-          dinfn.
-        </h3>
-        <p>
-          {" "}
-          Debitis provident pariatur deleniti ex ad, excepturi rem adipisci unde
-          iusto similique. Blanditiis, velit beatae? Accusantium doloremque
-          adipisci{" "}
-          <span>
-            {" "}
-            ...
-            <a href="/#linktoarticle">Read article</a>
-          </span>
-        </p>
-        <p className="blog-list__date">May 13, 2020</p>
-      </article>
-      <article className="blog-list__article">
-        <h3>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit adin infn
-          dinfn.
-        </h3>
-        <p>
-          {" "}
-          Debitis provident pariatur deleniti ex ad, excepturi rem adipisci unde
-          iusto similique. Blanditiis, velit beatae? Accusantium doloremque
-          adipisci{" "}
-          <span>
-            {" "}
-            ...
-            <a href="/#linktoarticle">Read article</a>
-          </span>
-        </p>
-        <p className="blog-list__date">May 13, 2020</p>
-      </article>
-      <article className="blog-list__article">
-        <h3>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit adin infn
-          dinfn.
-        </h3>
-        <p>
-          {" "}
-          Debitis provident pariatur deleniti ex ad, excepturi rem adipisci unde
-          iusto similique. Blanditiis, velit beatae? Accusantium doloremque
-          adipisci{" "}
-          <span>
-            {" "}
-            ...
-            <a href="/#linktoarticle">Read article</a>
-          </span>
-        </p>
-        <p className="blog-list__date">May 13, 2020</p>
-      </article>
-
-      <div className="more-articles-box">
-        <button>See More</button>
-      </div>
+      {renderPosts()}
+      {posts.length >= chunksPerPage * 2 + 1 && (
+        <div className="more-articles-box">
+          <button type="button" onClick={onLoad} disabled={allLoaded}>
+            {allLoaded ? "All loaded" : "See More"}
+          </button>
+        </div>
+      )}
     </section>
   )
 }
