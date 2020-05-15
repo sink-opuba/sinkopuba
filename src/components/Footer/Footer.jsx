@@ -54,7 +54,7 @@ const Footer = () => {
       <div className="copyright-box">
         <p>
           {" "}
-          © {new Date().getFullYear()}, Built with 🤎 by
+          © {new Date().getFullYear()}, Built with ❤ by
           {` `}
           Sink-Opuba
         </p>
