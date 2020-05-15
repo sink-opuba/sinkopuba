@@ -2,7 +2,7 @@
 path: why-start-a-blog
 date: 2020-05-15T06:19:29.831Z
 title: Why Start a blog?
-featuredimage: ../static/assets/vue-code.png
+featuredimage: ../static/assets/sink-blog.png
 imagedescription: sink-opuba-website
 tag: Blog Why-Start
 ---
