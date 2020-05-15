@@ -4,10 +4,8 @@ import site from "../../gatsby-config"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import BlogStyle from "./postTemplate.module.scss"
+import "./blogTemplate.scss"
 import SEO from "../components/seo"
-import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa"
-import { MdEmail } from "react-icons/md"
 
 const Blog = ({ data, pageContext, location }) => {
   const url = `${site.siteMetadata.siteUrl + location.pathname}`
@@ -16,8 +14,8 @@ const Blog = ({ data, pageContext, location }) => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <div className={BlogStyle.container}>
-        <div className={BlogStyle.postMetaInfo}>
+      <div className="blog-container">
+        <div className="post-meta-info">
           <h1>{post.frontmatter.title}</h1>
           <div>
             <h5>
@@ -25,70 +23,53 @@ const Blog = ({ data, pageContext, location }) => {
             </h5>
           </div>
         </div>
-        <div className={BlogStyle.socialIcons}>
-          <a
-            href={`mailto:?&body=${url}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={BlogStyle.email}
-          >
-            <MdEmail />
-          </a>
+
+        <div className="featured-img">
+          <Img
+            alt={post.frontmatter.imagedescription}
+            fluid={post.frontmatter.featuredimage.childImageSharp.fluid}
+          />
+        </div>
+        <div className="blog-post-body">
+          <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+        </div>
+        <div className="share-article">
+          <span> - SHARE ARTICLE</span>
           <a
             href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
             target="_blank"
             rel="noopener noreferrer"
-            className={BlogStyle.facebook}
           >
-            <FaFacebookF />
+            Facebook
           </a>
           <a
             href={`https://twitter.com/share?text=${post.frontmatter.title}&url=${url}`}
             target="_blank"
             rel="noopener noreferrer"
-            className={BlogStyle.twitter}
           >
-            <FaTwitter />
+            Twitter
           </a>
           <a
             href={`http://www.linkedin.com/shareArticle?mini=true&url=${url}`}
             target="_blank"
             rel="noopener noreferrer"
-            className={BlogStyle.linkedin}
           >
-            <FaLinkedinIn />
+            Linkedin
           </a>
         </div>
-        <div className={BlogStyle.featuredImg}>
-          <Img fluid={post.frontmatter.featuredimage.childImageSharp.fluid} />
+
+        <div className="article-links">
+          {prev && (
+            <Link to={`blog/${prev.path}`}>
+              Prev <span>&larr;</span> {prev.title}
+            </Link>
+          )}
+          {next && (
+            <Link to={`blog/${next.path}`}>
+              Next <span>&rarr; </span> {next.title}
+            </Link>
+          )}
         </div>
-        <div className={BlogStyle.blogPostBody}>
-          <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-        </div>
-        
-        <div className={BlogStyle.aboutAuthor}>
-          
-          <div className={BlogStyle.authorInfo}>
-            <span>About the Author</span>
-            <h3>{post.frontmatter.author}</h3>
-            <p className={BlogStyle.description}>
-              {post.frontmatter.authorrole ? post.frontmatter.authorrole : null}{" "}
-              @Techamplifier
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className={BlogStyle.articleLinks}>
-        {prev && (
-          <Link to={`/${prev.path}`}>
-            prev <span>&larr;</span> {prev.title}
-          </Link>
-        )}
-        {next && (
-          <Link to={`/${next.path}`}>
-            next <span>&rarr; </span> {next.title}
-          </Link>
-        )}
       </div>
     </Layout>
   )

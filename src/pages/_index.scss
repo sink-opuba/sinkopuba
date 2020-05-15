@@ -59,6 +59,7 @@
   .sink-section__heading {
     order: 2;
     text-align: center;
+    margin: 0 auto;
     h1 {
       font-size: 2.3rem;
       line-height: 2.8rem;
@@ -70,5 +71,10 @@
 
   .blog-section {
     padding: 1.8rem;
+  }
+}
+@media (max-width: 330px) {
+  .sink-section__img {
+    max-width: 20rem;
   }
 }
