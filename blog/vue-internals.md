@@ -6,7 +6,7 @@ featuredimage: ../static/assets/vue-code.png
 imagedescription: Vue in view
 tag: JavaScript Vue
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna fermentum iaculis eu non diam phasellus vestibulum lorem. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Ut aliquam purus sit amet luctus. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Maecenas accumsan lacus vel facilisis volutpat est. Id faucibus nisl tincidunt eget. Elementum nibh tellus molestie nunc non blandit massa enim. Nisl purus in mollis nunc sed id semper risus. Dui vivamus arcu felis bibendum ut tristique et.
+I am not sure how Vue is implemented under the hood is something that keeps you up at night. Being sink-opuba, I like to know not just how things work, but why? So in this article, we'll take a walk through the internals of this popular JavaScript framework for you to get a sneak peek on the behind the scene of the Magic, yes the magic of the DOM. Wait for it...my dear reader. Don't worry beautiful articles like this will be coming your way once I lauch properly. Still a work in progress!!!
 
 Lacinia at quis risus sed vulputate odio ut enim. Mi sit amet mauris commodo quis imperdiet massa tincidunt. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Accumsan lacus vel facilisis volutpat est velit. Nisl rhoncus mattis rhoncus urna neque viverra justo. Tellus orci ac auctor augue mauris augue neque gravida in. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. Ultricies lacus sed turpis tincidunt. A condimentum vitae sapien pellentesque habitant morbi. Mattis molestie a iaculis at erat pellentesque adipiscing.
 
