@@ -4,8 +4,8 @@ backend:
 
 media_folder: static/assets
 public_folder: ../static/assets
-site_url: http://sinkopuba.netlify.app
-display_url: http://sinkopuba.netlify.app
+site_url: https://sinkopuba.netlify.app
+display_url: https://sinkopuba.netlify.app
 logo_url: ../../src/images/sinkopuba.png
 
 collections:
