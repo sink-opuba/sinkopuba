@@ -8,8 +8,6 @@
   text-align: center;
   margin: 2rem;
   animation: moveInBottom 1s ease-in 0s;
-  font-family: "Montserrat";
-
   h1 {
     font-size: 3rem;
   }
@@ -25,15 +23,13 @@
 }
 .blog-post-body {
   line-height: 1.7;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   border-bottom: 1.6px solid #777777;
   margin-bottom: 2rem;
   padding: 2rem 1rem 2rem;
   font-family: "SF Pro Rounded";
   word-spacing: 0.25rem;
-  font-weight: 600;
-  opacity: 0.8;
-
+  font-weight: lighter;
   &::first-letter {
     font-size: 2rem;
   }

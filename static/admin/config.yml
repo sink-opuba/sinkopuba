@@ -4,8 +4,8 @@ backend:
 
 media_folder: static/assets
 public_folder: ../static/assets
-site_url: https://sinkopuba.com
-display_url: https://sinkopuba.com
+site_url: http://sinkopuba.netlify.app
+display_url: http://sinkopuba.netlify.app
 logo_url: ../../src/images/sinkopuba.png
 
 collections:
@@ -17,8 +17,13 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: "Publish Date", widget: datetime }
       - { name: title, label: Title }
-      - { name: description, label: Description, widget: "text", required: false }
+      - {
+          name: description,
+          label: Description,
+          widget: "text",
+          required: false,
+        }
       - { name: tag, label: "Tag(s)", widget: "text" }
       - { name: "featuredimage", label: "Featured Image", widget: image }
-      - { name: "imagedescription", label: "Image Description", widget: "text"}
+      - { name: "imagedescription", label: "Image Description", widget: "text" }
       - { name: body, label: Body, widget: markdown }
