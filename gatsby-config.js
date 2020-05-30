@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.sinkopuba.com`,
+        siteUrl: `https://sinkopuba.com`,
       },
     },
     {
