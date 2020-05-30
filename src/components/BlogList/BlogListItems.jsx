@@ -3,7 +3,7 @@ import React from "react"
 const BlogListItems = ({ posts }) => {
   return posts.map((post, index) => {
     return (
-      <article className="blog-list__article">
+      <article key={index} className="blog-list__article">
         <h3>{post.node.frontmatter.title}</h3>
         <p>
           {" "}

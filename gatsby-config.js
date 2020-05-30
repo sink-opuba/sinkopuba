@@ -13,6 +13,12 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://sinkopuba.com`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "blog",

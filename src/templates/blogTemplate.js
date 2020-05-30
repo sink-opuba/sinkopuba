@@ -43,7 +43,7 @@ const Blog = ({ data, pageContext, location }) => {
             Facebook
           </a>
           <a
-            href={`https://twitter.com/share?text=${post.frontmatter.title}&url=${url}`}
+            href={`https://twitter.com/share?text=${post.frontmatter.title}&url=${url}&hashtags=${post.frontmatter.tag}&via=sinkopuba`}
             target="_blank"
             rel="noopener noreferrer"
           >
