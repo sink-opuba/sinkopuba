@@ -31,8 +31,7 @@ const IndexPage = () => {
           <div className="sink-section__heading">
             <h1>
               {" "}
-              Hi, I'm Sinkopere Opuba, a software Developer with a bias toward
-              JavaScript and its ecosystem. Thanks for stopping by👏
+              Hi, I'm Sinkopere Opuba, I walk the line between software development and IT operations, driving consistency for deployment and build processes. Thanks for stopping by👏
             </h1>
           </div>
           <div className="sink-section__img">
